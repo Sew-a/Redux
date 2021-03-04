@@ -4,12 +4,13 @@ import { fetchPosts } from "../actions";
 import UserHeader from "./UserHeader";
 
 class PostList extends Component {
+ 
   componentDidMount() {
-    this.props.fetchPosts();
+    this.props.fetchPosts()
   }
 
   renderList() {
-    return this.props.posts.map((post) => {
+     this.props.posts.state  && this.props.posts.state.map((post) => {
       return (
         <div className="item" key={post.id}>
           <i className="large middle aligned icon user" />
@@ -26,7 +27,23 @@ class PostList extends Component {
   }
 
   render() {
-    return <div className="ui relaxed divided list">{this.renderList()}</div>;
+    return <div className="ui relaxed divided list">{ 
+      this.props.posts.state  && this.props.posts.state.map((post) => {
+        console.log(post)
+        return (
+          <div className="item" key={post.id}>
+            <i className="large middle aligned icon user" />
+            <div className="content">
+              <div className="description">
+                <h2>{post.title}</h2>
+                <p>{post.body}</p>
+              </div>
+              <UserHeader userId={post.userId} />
+            </div>
+          </div>
+        )
+      })
+    }</div>;
   }
 }
 
