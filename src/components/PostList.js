@@ -10,6 +10,7 @@ class PostList extends Component {
   }
 
   renderList() {
+    return (
      this.props.posts.state  && this.props.posts.state.map((post) => {
       return (
         <div className="item" key={post.id}>
@@ -19,31 +20,17 @@ class PostList extends Component {
               <h2>{post.title}</h2>
               <p>{post.body}</p>
             </div>
-            <UserHeader userId={post.userId} />
+            {/* <UserHeader userId={post.userId} /> */}
           </div>
         </div>
       );
-    });
+    }));
   }
 
   render() {
-    return <div className="ui relaxed divided list">{ 
-      this.props.posts.state  && this.props.posts.state.map((post) => {
-        console.log(post)
-        return (
-          <div className="item" key={post.id}>
-            <i className="large middle aligned icon user" />
-            <div className="content">
-              <div className="description">
-                <h2>{post.title}</h2>
-                <p>{post.body}</p>
-              </div>
-              <UserHeader userId={post.userId} />
-            </div>
-          </div>
-        )
-      })
-    }</div>;
+    return <div className="ui relaxed divided list">
+      {this.renderList()}
+      </div>;
   }
 }
 

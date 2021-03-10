@@ -8,6 +8,7 @@ class UserHeader extends Component {
   }
   render() {
     const { user } = this.props;
+    console.log(this.props)
     if (!user) {
       return null;
     }
