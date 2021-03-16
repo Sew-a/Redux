@@ -7,6 +7,7 @@ import StreamShow from "./streams/StreamShow";
 import StreamDelete from "./streams/StreamDelete";
 
 import Header from './Header';
+import "./style/header.scss";
 
 const App = () => {
     return (
