@@ -1,13 +1,12 @@
-import React from "react";
-import PostList from "./PostList";
+import React from 'react';
+import { BrowserRouter, Route } from "react-router-dom";
 
-const App = () => {
-  return (
-    <div className="ui container">
-      <h1>APP</h1>
-      <PostList />
-    </div>
-  );
-};
+function App() {
+    return (
+        <div>
+            <h1>Streams</h1>
+        </div>
+    )
+}
 
-export default App;
+export default App
