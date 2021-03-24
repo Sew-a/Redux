@@ -1,15 +1,21 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
+import GoogleAuth from "./GoogleAuth";
 
 const Header = () => {
-    return (
-        <div className="ui secondary pointing menu header">
-            <Link to="/" className="item">Stream</Link>
-            <div className="right menu">
-            <Link to="/streams/new" className="item">All Streams</Link>
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="ui secondary pointing menu header">
+      <Link to="/" className="item">
+        Stream
+      </Link>
+      <div className="right menu">
+        <Link to="/streams/new" className="item">
+          All Streams
+        </Link>
+        <GoogleAuth />
+      </div>
+    </div>
+  );
+};
 
-export default Header
+export default Header;
