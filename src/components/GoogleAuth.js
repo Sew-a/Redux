@@ -23,7 +23,7 @@ export class GoogleAuth extends Component {
     if (isSignedIn) {
       return this.props.signIn(this.auth.currentUser.get().getId());
     } else {
-      return this.props.signOut;
+      return this.props.signOut();
     }
   };
 

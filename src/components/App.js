@@ -7,11 +7,11 @@ import StreamShow from "./streams/StreamShow";
 import StreamDelete from "./streams/StreamDelete";
 
 import Header from './Header';
-import "./style/header.scss";
+import "./style/main.scss";
 
 const App = () => {
     return (
-        <div>
+        <main>
            <Router>
            <Header />
             <div>
@@ -22,7 +22,7 @@ const App = () => {
              <Route path="/streams/show" component={StreamShow} />
             </div>
            </Router>
-        </div>
+        </main>
     )
 }
 
