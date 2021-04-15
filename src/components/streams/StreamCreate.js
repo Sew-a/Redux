@@ -7,8 +7,8 @@ export class StreamCreate extends Component {
   renderError({ error, touched }) {
     if (touched && error) {
       return (
-        <div className="ui error message">
-          <div className="error">{error}</div>
+        <div className='ui error message'>
+          <div className='error'>{error}</div>
         </div>
       );
     }
@@ -19,7 +19,7 @@ export class StreamCreate extends Component {
     return (
       <div className={className}>
         <label>{label}</label>
-        <input {...input} autoComplete="off" />
+        <input {...input} autoComplete='off' />
         {this.renderError(meta)}
       </div>
     );
@@ -32,16 +32,15 @@ export class StreamCreate extends Component {
   render() {
     return (
       <form
-        className="ui form error"
-        onSubmit={this.props.handleSubmit(this.onSubmit)}
-      >
-        <Field name="title" component={this.renderInput} label="Enter Title" />
+        className='ui form error'
+        onSubmit={this.props.handleSubmit(this.onSubmit)}>
+        <Field name='title' component={this.renderInput} label='Enter Title' />
         <Field
-          name="decription"
+          name='description'
           component={this.renderInput}
-          label="Enter Description"
+          label='Enter Description'
         />
-        <button className="ui button primary">Submit</button>
+        <button className='ui button primary'>Submit</button>
       </form>
     );
   }
@@ -52,8 +51,8 @@ const validate = (formValues) => {
   if (!formValues.title) {
     errors.title = "You must enter a title";
   }
-  if (!formValues.decription) {
-    errors.decription = "You must enter a decription";
+  if (!formValues.description) {
+    errors.description = "You must enter a description";
   }
 
   return errors;
